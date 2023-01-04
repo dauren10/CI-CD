@@ -28,4 +28,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          script: 'ls'
+          script: 'echo 222'
