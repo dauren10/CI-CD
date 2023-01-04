@@ -27,4 +27,5 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        script: 'ls'
+        with:
+          script: 'ls'
