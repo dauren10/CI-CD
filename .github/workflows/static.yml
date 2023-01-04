@@ -36,6 +36,6 @@ jobs:
           username: ${{secrets.SSH_USERNAME}} # user of the server
           
           script: |
-            cd /var/www/my-site # enter into the folder that will host the landing page for the first time
+            cd /home/www/testcd # enter into the folder that will host the landing page for the first time
             git pull # update the working directory with the latest from the github repo
             echo 'Deployment successful to Digital Ocean' # Display message to reflect deployment status
