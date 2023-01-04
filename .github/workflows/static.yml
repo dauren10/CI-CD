@@ -13,5 +13,6 @@ jobs:
         username: root
         password: ${{ secrets.SSH_PASSWORD }}
         passphrase: ${{ secrets.PASSPHRASE }}
+        key: ${{ secrets.KEY }}
         port: 22
         script: cd /home/www/testcd && git pull
