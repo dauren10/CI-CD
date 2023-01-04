@@ -1,0 +1,41 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with: # all below inputs are specifically defined in ssh-action script
+          host: ${{secrets.SSH_HOST}} # IP address of the server
+          key: ${{secrets.SSH_KEY}} #private key of the server
+          username: ${{secrets.SSH_USERNAME}} # user of the server
+          
+          script: |
+            cd /var/www/my-site # enter into the folder that will host the landing page for the first time
+            git pull # update the working directory with the latest from the github repo
+            echo 'Deployment successful to Digital Ocean' # Display message to reflect deployment status
