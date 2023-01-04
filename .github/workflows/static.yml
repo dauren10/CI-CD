@@ -12,5 +12,6 @@ jobs:
         host: 188.120.247.225
         username: root
         password: ${{ secrets.SSH_PASSWORD }}
+        passphrase: 101288
         port: 22
         script: cd /home/www/testcd && git pull
