@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: appleboy/ssh-action@v0.1.6
+        uses: actions/checkout@v3
         with: # all below inputs are specifically defined in ssh-action script
           host: ${{secrets.SSH_HOST}} # IP address of the server
           key: ${{secrets.SSH_KEY}} #private key of the server
