@@ -33,7 +33,4 @@ jobs:
           username: root # user of the server
           password: 101288
           port: 22
-          script: |
-            cd /home/www/testcd # enter into the folder that will host the landing page for the first time
-            git pull # update the working directory with the latest from the github repo
-            echo 'Deployment successful to Digital Ocean' # Display message to reflect deployment status
+          script: 'cd /home/www/testcd && git pull'
