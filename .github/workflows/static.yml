@@ -31,6 +31,7 @@ jobs:
           host: ${{secrets.SSH_HOST}} # IP address of the server
           key: ${{secrets.SSH_KEY}} #private key of the server
           username: ${{secrets.SSH_USERNAME}} # user of the server
+          password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: |
             cd /home/www/testcd # enter into the folder that will host the landing page for the first time
