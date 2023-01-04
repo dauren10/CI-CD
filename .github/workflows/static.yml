@@ -11,7 +11,7 @@ jobs:
       with:
         host: 188.120.247.225
         username: root
-        password: ${{ secrets.SSH_PASSWORD }}
+        #password: ${{ secrets.SSH_PASSWORD }}
         passphrase: ${{ secrets.PASSPHRASE }}
         key: ${{ secrets.KEY }}
         port: 22
