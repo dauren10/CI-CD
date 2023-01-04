@@ -27,10 +27,4 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with: # all below inputs are specifically defined in ssh-action script
-          host: 188.120.247.225 # IP address of the server
-          key: ${{secrets.SSH_KEY}} #private key of the server
-          username: root # user of the server
-          password: 101288
-          port: 22
-          script: 'cd /home/www/testcd && git pull'
+        - run: ls -la
